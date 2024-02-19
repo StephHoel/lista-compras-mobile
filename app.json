@@ -1,16 +1,16 @@
 {
   "expo": {
-    "name": "lista-compras-mobile",
+    "name": "Lista de Compras",
     "slug": "lista-compras-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "lista-compras",
+    "scheme": "lista-compras-mobile",
     "userInterfaceStyle": "dark",
     "splash": {
       "image": "./assets/images/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#0F172A"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -21,7 +21,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#0F172A"
       },
       "package": "com.stephhoel.listacomprasmobile"
     },
