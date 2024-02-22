@@ -1,5 +1,5 @@
-import { PropsWithChildren, useEffect, useState } from 'react'
-import { TextInput } from 'react-native'
+import { PropsWithChildren, useEffect, useRef, useState } from 'react'
+import { Alert, TextInput } from 'react-native'
 import uuid from 'react-native-uuid'
 
 import { useCartStore } from '@/stores/CartStore'
@@ -17,46 +17,33 @@ interface FormProps extends PropsWithChildren {
 
 export function Form({ data = null, buttonTitle, children }: FormProps) {
   const [item, setItem] = useState('')
-
   const [qtt, setQtt] = useState('')
-  const [isValidQtt, setIsValidQtt] = useState(true)
-
   const [price, setPrice] = useState('')
-  const [isValidPrice, setIsValidPrice] = useState(true)
 
   const cartStore = useCartStore()
   const navigate = useNavigation()
 
-  function handleQtt(text: string): void {
-    try {
-      parseFloat(text) && setIsValidQtt(true)
-    } catch {
-      setIsValidQtt(false)
+  const inputRef1 = useRef<TextInput>(null)
+  const inputRef2 = useRef<TextInput>(null)
+  const inputRef3 = useRef<TextInput>(null)
+
+  function handleNextOrSubmit(): void {
+    const floatQtt = parseFloat(qtt) // Converte qtt para float
+    const floatPrice = parseFloat(price) // Converte price para float
+
+    if (item !== '' && !isNaN(floatQtt) && !isNaN(floatPrice)) {
+      const product: ProductProps = {
+        id: uuid.v4().toString(),
+        item,
+        quantity: floatQtt.toString(), // Converte de volta para string se necessário
+        price: floatPrice.toString(), // Converte de volta para string se necessário
+      }
+      cartStore.add(product)
+
+      navigate.goBack()
+    } else {
+      Alert.alert('Erro', 'Por favor, preencha todos os campos corretamente.')
     }
-
-    setQtt(text)
-  }
-
-  function handlePrice(text: string): void {
-    try {
-      parseFloat(text) && setIsValidPrice(true)
-    } catch {
-      setIsValidPrice(false)
-    }
-
-    setPrice(text)
-  }
-
-  function handleAdd(): void {
-    const product: ProductProps = {
-      id: uuid.v4().toString(),
-      item,
-      quantity: qtt,
-      price,
-    }
-    cartStore.add(product)
-
-    navigate.goBack()
   }
 
   useEffect(() => {
@@ -75,31 +62,33 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
         placeholder="Item"
         onChangeText={setItem}
         value={item}
+        ref={inputRef1}
+        onSubmitEditing={() => inputRef2.current?.focus()}
         returnKeyType="next"
       />
       <TextInput
-        className={`border rounded p-2.5 mb-5 mx-2
-        ${isValidQtt ? 'border-gray-400 text-white' : 'border-red-500 text-red-500'}
-        `}
+        className={`border rounded p-2.5 mb-5 mx-2 border-gray-400 text-white`}
         placeholderTextColor={colors.slate[400]}
         placeholder="1"
-        onChangeText={handleQtt}
+        onChangeText={setQtt}
         value={qtt}
         keyboardType="number-pad"
+        ref={inputRef2}
+        onSubmitEditing={() => inputRef3.current?.focus()}
         returnKeyType="next"
       />
       <TextInput
-        className={`border rounded p-2.5 mb-5 mx-2 
-        ${isValidPrice ? 'border-gray-400 text-white' : 'border-red-500 text-red-500'}
-        `}
+        className={`border rounded p-2.5 mb-5 mx-2 border-gray-400 text-white`}
         placeholderTextColor={colors.slate[400]}
         placeholder="1,30"
-        onChangeText={handlePrice}
+        onChangeText={setPrice}
         value={price}
         keyboardType="number-pad"
-        returnKeyType="next"
+        ref={inputRef3}
+        onSubmitEditing={handleNextOrSubmit}
+        returnKeyType="done"
       />
-      <Button onPress={handleAdd}>
+      <Button onPress={handleNextOrSubmit}>
         <Button.Icon>{children}</Button.Icon>
         <Button.Text>{buttonTitle}</Button.Text>
       </Button>
