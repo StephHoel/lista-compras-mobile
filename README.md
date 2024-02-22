@@ -4,7 +4,6 @@ Este é o repositório oficial do aplicativo de Lista de Compras. Nosso aplicati
 
 <!--
 Possível melhoria:
-  - diminuir tamanho (cerca de 30%) da logo na icon e adaptive-icon
   - ver pq o "next" do teclado não tá funcionando
   - ver pq o "next" do teclado não envia o botão (botão está como submit?)
   - marcar itens já coletados (ou tachar os itens que tiverem com preço e deixar "normal" os que tiverem sem preço)
