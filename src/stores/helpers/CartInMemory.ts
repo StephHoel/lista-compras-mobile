@@ -17,10 +17,9 @@ export function remove(products: ProductProps[], productRemovedId: string) {
 
 export function edit(products: ProductProps[], editProduct: ProductProps) {
   const productsList = products.map((product) => {
-    if (product.id === editProduct.id) {
-      return { ...product, ...editProduct } // Atualize o objeto com o novo dado
-    }
-    return product // Mantenha os objetos que não precisam ser atualizados
+    if (product.id === editProduct.id) return { ...product, ...editProduct }
+
+    return product
   })
 
   return productsList

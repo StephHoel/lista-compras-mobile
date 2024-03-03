@@ -28,17 +28,21 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
   const inputRef3 = useRef<TextInput>(null)
 
   function handleNextOrSubmit(): void {
-    const floatQtt = parseFloat(qtt) // Converte qtt para float
-    const floatPrice = parseFloat(price) // Converte price para float
+    const floatQtt = parseFloat(qtt)
+    const floatPrice = parseFloat(price)
 
     if (item !== '' && !isNaN(floatQtt) && !isNaN(floatPrice)) {
       const product: ProductProps = {
         id: uuid.v4().toString(),
         item,
-        quantity: floatQtt.toString(), // Converte de volta para string se necessário
-        price: floatPrice.toString(), // Converte de volta para string se necessário
+        quantity: floatQtt.toString(),
+        price: floatPrice.toString(),
       }
-      cartStore.add(product)
+
+      if (data !== null) {
+        product.id = data.id
+        cartStore.edit(product)
+      } else cartStore.add(product)
 
       navigate.goBack()
     } else {
