@@ -32,17 +32,19 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
     const floatPrice = parseFloat(price)
 
     if (item !== '' && !isNaN(floatQtt) && !isNaN(floatPrice)) {
+      let id = uuid.v4().toString()
+
+      if (data !== null) id = data.id
+
       const product: ProductProps = {
-        id: uuid.v4().toString(),
+        id,
         item,
         quantity: floatQtt.toString(),
         price: floatPrice.toString(),
       }
 
-      if (data !== null) {
-        product.id = data.id
-        cartStore.edit(product)
-      } else cartStore.add(product)
+      if (data !== null) cartStore.edit(product)
+      else cartStore.add(product)
 
       navigate.goBack()
     } else {
