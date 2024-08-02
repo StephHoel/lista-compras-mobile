@@ -17,7 +17,11 @@ export default function Home() {
 
   return (
     <ScrollView>
-      <Header text="Lista de Compras" index />
+      <Header
+        text="Lista de Compras"
+        index
+        hasItens={cartStore.products.length > 0}
+      />
 
       <Text className="text-white text-center pt-2 pb-4">
         Total: {FormatCurrency(total)}

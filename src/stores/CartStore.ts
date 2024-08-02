@@ -13,6 +13,10 @@ export const useCartStore = create(
         set((state) => ({
           products: CartInMemory.add(state.products, product),
         })),
+      replace: (products: ProductProps[]) =>
+        set(() => ({
+          products: CartInMemory.replace(products),
+        })),
       remove: (productId: string) =>
         set((state) => ({
           products: CartInMemory.remove(state.products, productId),

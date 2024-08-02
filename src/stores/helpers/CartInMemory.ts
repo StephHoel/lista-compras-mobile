@@ -7,6 +7,10 @@ export function add(products: ProductProps[], newProduct: ProductProps) {
   return SortList(newProducts)
 }
 
+export function replace(products: ProductProps[]) {
+  return SortList(products)
+}
+
 export function remove(products: ProductProps[], productRemovedId: string) {
   const updatedProducts = products.map((product) =>
     product.id === productRemovedId ? { ...product, quantity: '0' } : product,
