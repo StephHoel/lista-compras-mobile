@@ -2,7 +2,7 @@
 
 Este é o repositório oficial do aplicativo de Lista de Compras. Nosso aplicativo é projetado para tornar suas idas ao supermercado mais eficientes e organizadas.
 
-![Gif Mobile](./_photos/mobile.gif)
+![Gif Mobile](.github/mobile.gif)
 
 <!--
 Possível melhoria:
