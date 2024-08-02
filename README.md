@@ -2,10 +2,11 @@
 
 Este é o repositório oficial do aplicativo de Lista de Compras. Nosso aplicativo é projetado para tornar suas idas ao supermercado mais eficientes e organizadas.
 
+![Gif Mobile](./_photos/mobile.gif)
+
 <!--
 Possível melhoria:
-  - marcar itens já coletados (ou tachar os itens que tiverem com preço e deixar "normal" os que tiverem sem preço)
-  - **Compartilhamento de Lista de Compras:** Compartilhe suas listas de compras com membros da família e amigos, facilitando compras conjuntas.
+  - marcar itens já coletados (ou tachar os itens que tiverem com preço e deixar "normal" os que tiverem sem preço)  
 -->
 
 ## Funcionalidades Principais
@@ -14,10 +15,12 @@ Possível melhoria:
 
 - **Design Intuitivo:** Interface do usuário intuitiva e amigável, tornando a navegação e o uso do aplicativo uma experiência agradável.
 
+- **Compartilhamento de Lista de Compras:** Compartilhe suas listas de compras com membros da família e amigos, facilitando compras conjuntas.
+
 ## Como Usar
 
 1. Faça o download do APK na parte de release do lado direito.
-2. Instale e execute o aplicativo em seu dispositivo android.
+2. Instale e execute o aplicativo em seu dispositivo android. Não é necessário fazer login (a lista fica salva apenas no seu celular).
 
 ## Contribuição
 
