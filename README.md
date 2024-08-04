@@ -22,9 +22,20 @@ Possível melhoria:
 1. Faça o download do APK na parte de release do lado direito.
 2. Instale e execute o aplicativo em seu dispositivo android. Não é necessário fazer login (a lista fica salva apenas no seu celular).
 
+## Como fazer build depois da modificação
+
+Depois de fazer sua modificação, você deve querer compilar em um apk sua aplicação. Sendo assim, será necessário usar um terminal linux:
+
+1. Fazer o export dos paths:
+   1. `export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64`
+   2. `export ANDROID_HOME=$HOME/android`
+   3. `export ANDROID_SDK_ROOT=${ANDROID_HOME}`
+   4. `export PATH=${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${PATH}`
+2. E executar o build: `eas build --platform android --local`
+
 ## Contribuição
 
-Adoraríamos receber contribuições para melhorar nosso aplicativo! Sinta-se à vontade para abrir problemas (issues) relatando bugs ou sugerindo novas funcionalidades. Além disso, aceitamos pull requests para correções de bugs ou melhorias de código.
+Adoraríamos receber contribuições para melhorar nosso aplicativo! Sinta-se à vontade para abrir problemas (issues) relatando bugs ou sugerindo novas funcionalidades. Além disso, aceitamos pull requests para correções de bugs, novas funcionalidades ou melhorias de código.
 
 ## Licença
 
