@@ -19,7 +19,7 @@ Possível melhoria:
 
 ## Como Usar
 
-1. Faça o download do APK na parte de release do lado direito.
+1. Faça o download do APK mais recente [clicando aqui](https://github.com/StephHoel/lista-compras-mobile/releases/download/v1.2.7/lista-compras-v1.2.7.apk).
 2. Instale e execute o aplicativo em seu dispositivo android. Não é necessário fazer login (a lista fica salva apenas no seu celular).
 
 ## Como fazer build depois da modificação
