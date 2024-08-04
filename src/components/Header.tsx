@@ -38,7 +38,7 @@ export function Header({ text, index = false, hasItens = false }: HeaderProps) {
     setButtonsList(buttons)
   }
 
-  async function pastOnList() {
+  async function pasteOnList() {
     const clipboard = await Clipboard.getStringAsync()
 
     if (clipboard && clipboard.startsWith(titleMessage)) {
@@ -72,14 +72,12 @@ export function Header({ text, index = false, hasItens = false }: HeaderProps) {
     const title = 'Compartilhar Lista'
     let message = ''
 
-    if (cartStore.products.length === 0) {
-      message =
-        'Coloque pelo menos 1 item na sua lista para que ela possa ser compartilhada.'
-
-      return showAlert(title, message)
+    const pasteButton = {
+      text: 'Colar Lista',
+      action: pasteOnList,
     }
 
-    return showAlert(title, message, [
+    let buttons = [
       {
         text: 'Enviar via WhatsApp',
         action: () => {
@@ -87,11 +85,17 @@ export function Header({ text, index = false, hasItens = false }: HeaderProps) {
           Linking.openURL(`http://api.whatsapp.com/send?text=${message}`)
         },
       },
-      {
-        text: 'Colar Lista',
-        action: pastOnList,
-      },
-    ])
+      pasteButton,
+    ]
+
+    if (cartStore.products.length === 0) {
+      message =
+        'Coloque pelo menos 1 item na sua lista para que ela possa ser compartilhada.'
+
+      buttons = [pasteButton]
+    }
+
+    return showAlert(title, message, buttons)
   }
 
   function disableAlert() {
@@ -125,16 +129,14 @@ export function Header({ text, index = false, hasItens = false }: HeaderProps) {
         {index ? (
           <>
             {hasItens && (
-              <>
-                <TouchableOpacity activeOpacity={0.7} onPress={handleRemoveAll}>
-                  <Feather name="trash-2" size={35} color="white" />
-                </TouchableOpacity>
-
-                <TouchableOpacity activeOpacity={0.7} onPress={handleShare}>
-                  <Feather name="share-2" size={35} color="white" />
-                </TouchableOpacity>
-              </>
+              <TouchableOpacity activeOpacity={0.7} onPress={handleRemoveAll}>
+                <Feather name="trash-2" size={35} color="white" />
+              </TouchableOpacity>
             )}
+
+            <TouchableOpacity activeOpacity={0.7} onPress={handleShare}>
+              <Feather name="share-2" size={35} color="white" />
+            </TouchableOpacity>
 
             <Link href="/add" asChild>
               <TouchableOpacity activeOpacity={0.7}>

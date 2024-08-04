@@ -38,9 +38,9 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
 
       const product: ProductProps = {
         id,
-        item,
-        quantity: floatQtt.toString(),
-        price: floatPrice.toString(),
+        item: item.trim(),
+        quantity: floatQtt.toString().trim(),
+        price: floatPrice.toString().trim(),
       }
 
       if (data !== null) cartStore.edit(product)
