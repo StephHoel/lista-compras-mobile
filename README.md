@@ -1,42 +1,82 @@
-# App de Lista de Compras
+# Lista de Compras - Aplicativo Mobile
 
-Este é o repositório oficial do aplicativo de Lista de Compras. Nosso aplicativo é projetado para tornar suas idas ao supermercado mais eficientes e organizadas.
+Este é o repositório oficial do **Lista de Compras**, um aplicativo projetado para tornar suas idas ao supermercado mais eficientes e organizadas.
 
-![Gif Mobile](.github/mobile.gif)
+![Demonstração do Aplicativo](.github/mobile.gif)
 
+---
 <!--
 Possível melhoria:
-  - marcar itens já coletados (ou tachar os itens que tiverem com preço e deixar "normal" os que tiverem sem preço)  
+  - Marcar itens já coletados (ou tachar os itens que tiverem com preço e deixar "normal" os que tiverem sem preço)
+  - Mudar cor do item com preço diferente de 0
+  - Deixar salvar com preço zerado
+  - Aceitar input de preço com vírgula 
 -->
 
-## Funcionalidades Principais
+## 📋 Funcionalidades Principais
 
-- **Gerenciamento de Lista de Compras:** Crie e gerencie facilmente suas listas de compras, adicione, remova e edite itens conforme necessário.
+- **Gerenciamento de Lista de Compras:** Crie, edite e remova itens da sua lista de compras de forma simples e rápida.
+- **Design Intuitivo:** Interface amigável e fácil de usar, proporcionando uma experiência agradável.
+- **Compartilhamento de Listas:** Compartilhe suas listas com familiares e amigos via WhatsApp.
+- **Persistência Local:** Suas listas são salvas localmente no dispositivo, sem necessidade de login.
 
-- **Design Intuitivo:** Interface do usuário intuitiva e amigável, tornando a navegação e o uso do aplicativo uma experiência agradável.
+---
 
-- **Compartilhamento de Lista de Compras:** Compartilhe suas listas de compras com membros da família e amigos, facilitando compras conjuntas.
+## 🚀 Como Usar
 
-## Como Usar
+1. **Baixe o APK mais recente:** [Clique aqui para baixar](https://github.com/StephHoel/lista-compras-mobile/releases/download/v1.2.7/lista-compras-v1.2.7.apk).
+2. **Instale o aplicativo:** Após o download, instale o APK no seu dispositivo Android.
+3. **Comece a usar:** Abra o aplicativo e comece a criar suas listas de compras. Não é necessário login.
 
-1. Faça o download do APK mais recente [clicando aqui](https://github.com/StephHoel/lista-compras-mobile/releases/download/v1.2.7/lista-compras-v1.2.7.apk).
-2. Instale e execute o aplicativo em seu dispositivo android. Não é necessário fazer login (a lista fica salva apenas no seu celular).
+---
 
-## Como fazer build depois da modificação
+## 🛠️ Como Fazer Build
 
-Depois de fazer sua modificação, você deve querer compilar em um apk sua aplicação. Sendo assim, será necessário usar um terminal linux:
+Para compilar o aplicativo em um APK após modificações, siga os passos abaixo em um terminal Linux:
 
-1. Fazer o export dos paths:
-   1. `export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64`
-   2. `export ANDROID_HOME=$HOME/android`
-   3. `export ANDROID_SDK_ROOT=${ANDROID_HOME}`
-   4. `export PATH=${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${PATH}`
-2. E executar o build: `eas build --platform android --local`
+1. **Configure os caminhos necessários:**
+   ```bash
+   export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+   export ANDROID_HOME=$HOME/android
+   export ANDROID_SDK_ROOT=${ANDROID_HOME}
+   export PATH=${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${PATH}
+   ```
+2. **Execute o comando de build:**
+   ```bash
+   eas build --platform android --local
+   ```
 
-## Contribuição
+---
 
-Adoraríamos receber contribuições para melhorar nosso aplicativo! Sinta-se à vontade para abrir problemas (issues) relatando bugs ou sugerindo novas funcionalidades. Além disso, aceitamos pull requests para correções de bugs, novas funcionalidades ou melhorias de código.
+## 🤝 Contribuição
 
-## Licença
+Contribuições são bem-vindas! Sinta-se à vontade para:
 
-Este projeto é licenciado sob a [MIT License](LICENSE).
+- **Abrir Issues:** Relate bugs ou sugira novas funcionalidades.
+- **Enviar Pull Requests:** Contribua com correções de bugs, novas funcionalidades ou melhorias no código.
+
+### Como Contribuir
+
+1. Faça um fork do repositório.
+2. Crie uma branch para sua funcionalidade ou correção: `git checkout -b minha-feature`.
+3. Faça commit das suas alterações: `git commit -m 'Adiciona minha nova feature'`.
+4. Envie para o repositório remoto: `git push origin minha-feature`.
+5. Abra um Pull Request.
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a [MIT License](LICENSE). Sinta-se à vontade para usá-lo e modificá-lo conforme necessário.
+
+---
+
+## 📞 Suporte
+
+Se você tiver dúvidas ou problemas, entre em contato abrindo uma [issue](https://github.com/StephHoel/lista-compras-mobile/issues).
+
+---
+
+## 🌟 Agradecimentos
+
+Agradecemos a todos os contribuidores e usuários que ajudam a melhorar este projeto continuamente.
