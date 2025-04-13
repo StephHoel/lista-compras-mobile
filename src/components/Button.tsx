@@ -1,5 +1,6 @@
-import { PropsWithChildren } from 'react'
-import { Text, TouchableOpacity, TouchableOpacityProps } from 'react-native'
+import type { PropsWithChildren } from 'react'
+import { Text, TouchableOpacity } from 'react-native'
+import type { TouchableOpacityProps } from 'react-native'
 
 type ButtonProps = TouchableOpacityProps & PropsWithChildren
 
@@ -29,7 +30,7 @@ function ButtonIcon({ children }: ButtonIconProps) {
   return children
 }
 
-Button.Text = ButtonText
-Button.Icon = ButtonIcon
-
-export { Button }
+export const CustomButton = Object.assign(Button, {
+  Text: ButtonText,
+  Icon: ButtonIcon,
+})

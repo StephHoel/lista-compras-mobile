@@ -1,4 +1,4 @@
-import { ProductProps } from '../interfaces'
+import type { ProductProps } from '../interfaces'
 
 export function SortList(newProducts: ProductProps[]) {
   const sortedProducts = newProducts.sort((a, b) => {

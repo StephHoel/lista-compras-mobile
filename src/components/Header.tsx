@@ -2,7 +2,7 @@ import { useCartStore } from '@/stores/CartStore'
 import { titleMessage } from '@/utils/constants'
 import { ConvertToProductsList } from '@/utils/functions/ConvertToProductsList'
 import { ShareOnWhatsapp } from '@/utils/functions/ShareOnWhatsapp'
-import { ButtonProps } from '@/utils/interfaces'
+import type { ButtonProps } from '@/utils/interfaces'
 import { Feather } from '@expo/vector-icons'
 import * as Clipboard from 'expo-clipboard'
 import { Link } from 'expo-router'
@@ -41,7 +41,7 @@ export function Header({ text, index = false, hasItens = false }: HeaderProps) {
   async function pasteOnList() {
     const clipboard = await Clipboard.getStringAsync()
 
-    if (clipboard && clipboard.startsWith(titleMessage)) {
+    if (clipboard?.startsWith(titleMessage)) {
       const listToPaste = ConvertToProductsList(clipboard)
 
       return showAlert('Colar Lista', '', [
@@ -60,12 +60,12 @@ export function Header({ text, index = false, hasItens = false }: HeaderProps) {
           },
         },
       ])
-    } else {
-      return showAlert(
-        'Erro!',
-        'A lista copiada não está no padrão. Copie a lista do Whatsapp sem editar!',
-      )
     }
+
+    return showAlert(
+      'Erro!',
+      'A lista copiada não está no padrão. Copie a lista do Whatsapp sem editar!',
+    )
   }
 
   function handleShare() {

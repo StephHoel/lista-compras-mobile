@@ -1,5 +1,5 @@
 import * as CartInMemory from '@/stores/helpers/CartInMemory'
-import { ProductProps, StateProps } from '@/utils/interfaces'
+import type { ProductProps, StateProps } from '@/utils/interfaces'
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'

@@ -1,5 +1,5 @@
 import uuid from 'react-native-uuid'
-import { ProductProps } from '../interfaces'
+import type { ProductProps } from '../interfaces'
 
 export function ConvertToProductsList(clipboard: string) {
   const listShop = clipboard.split('--')[1].trim()

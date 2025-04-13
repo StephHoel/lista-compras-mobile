@@ -1,13 +1,14 @@
-import { PropsWithChildren, useEffect, useRef, useState } from 'react'
+import type { PropsWithChildren } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Alert, TextInput } from 'react-native'
 import uuid from 'react-native-uuid'
 
 import { useCartStore } from '@/stores/CartStore'
 import { useNavigation } from 'expo-router'
 
-import { ProductProps } from '@/utils/interfaces'
+import type { ProductProps } from '@/utils/interfaces'
 
-import { Button } from '@/components/Button'
+import { CustomButton as Button } from '@/components/Button'
 import colors from 'tailwindcss/colors'
 
 interface FormProps extends PropsWithChildren {
@@ -28,10 +29,10 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
   const inputRef3 = useRef<TextInput>(null)
 
   function handleNextOrSubmit(): void {
-    const floatQtt = parseFloat(qtt)
-    const floatPrice = parseFloat(price)
+    const floatQtt = Number.parseFloat(qtt)
+    const floatPrice = Number.parseFloat(price)
 
-    if (item !== '' && !isNaN(floatQtt) && !isNaN(floatPrice)) {
+    if (item !== '' && !Number.isNaN(floatQtt) && !Number.isNaN(floatPrice)) {
       let id = uuid.v4().toString()
 
       if (data !== null) id = data.id
@@ -73,7 +74,7 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
         returnKeyType="next"
       />
       <TextInput
-        className={`border rounded p-2.5 mb-5 mx-2 border-gray-400 text-white`}
+        className={'border rounded p-2.5 mb-5 mx-2 border-gray-400 text-white'}
         placeholderTextColor={colors.slate[400]}
         placeholder="1"
         onChangeText={setQtt}
@@ -84,7 +85,7 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
         returnKeyType="next"
       />
       <TextInput
-        className={`border rounded p-2.5 mb-5 mx-2 border-gray-400 text-white`}
+        className={'border rounded p-2.5 mb-5 mx-2 border-gray-400 text-white'}
         placeholderTextColor={colors.slate[400]}
         placeholder="1,30"
         onChangeText={setPrice}

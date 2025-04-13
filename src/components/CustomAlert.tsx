@@ -1,4 +1,4 @@
-import { ButtonProps } from '@/utils/interfaces'
+import type { ButtonProps } from '@/utils/interfaces'
 import { Modal, Text, TouchableOpacity, View } from 'react-native'
 
 interface CustomAlertProps {
@@ -23,15 +23,15 @@ export function CustomAlert({
         if (buttons.length > 0) buttons[buttons.length - 1].action()
       }}
     >
-      <View className={`flex-1 justify-center items-center bg-black/50`}>
-        <View className={`w-3/4 p-5 bg-slate-700 rounded-xl items-center`}>
-          <Text className={`text-xl text-white font-bold mb-3`}>{title}</Text>
+      <View className={'flex-1 justify-center items-center bg-black/50'}>
+        <View className={'w-3/4 p-5 bg-slate-700 rounded-xl items-center'}>
+          <Text className={'text-xl text-white font-bold mb-3'}>{title}</Text>
           {message && (
-            <Text className={`text-base text-white mb-5 text-center`}>
+            <Text className={'text-base text-white mb-5 text-center'}>
               {message}
             </Text>
           )}
-          <View className={`w-full flex-col`}>
+          <View className={'w-full flex-col'}>
             {buttons.map((button, index) => (
               <TouchableOpacity
                 key={index}
