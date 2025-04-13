@@ -1,7 +1,7 @@
 import { Header } from '@/components/Header'
 import { useCartStore } from '@/stores/CartStore'
 import { FormatCurrency } from '@/utils/functions/FormatCurrency'
-import { ProductProps } from '@/utils/interfaces'
+import type { ProductProps } from '@/utils/interfaces'
 import { Feather } from '@expo/vector-icons'
 import { Link } from 'expo-router'
 import { Alert, ScrollView, Text, TouchableOpacity, View } from 'react-native'
@@ -11,7 +11,9 @@ export default function Home() {
 
   const total = cartStore.products.reduce(
     (acc: number, currentItem: ProductProps) =>
-      acc + parseFloat(currentItem.quantity) * parseFloat(currentItem.price),
+      acc +
+      Number.parseFloat(currentItem.quantity) *
+        Number.parseFloat(currentItem.price),
     0,
   )
 
@@ -53,7 +55,7 @@ export default function Home() {
               </Link>
               <Text className="text-white pl-2 mr-14 text-xl">
                 {prod.quantity}x {prod.item} |{' '}
-                {FormatCurrency(parseFloat(prod.price))}
+                {FormatCurrency(Number.parseFloat(prod.price))}
               </Text>
             </View>
             {i !== cartStore.products.length - 1 && (

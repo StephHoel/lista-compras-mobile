@@ -1,5 +1,5 @@
 import { titleMessage } from '../constants'
-import { StateProps } from '../interfaces'
+import type { StateProps } from '../interfaces'
 import { ConvertMessage } from './ConvertMessage'
 import { FormatCurrency } from './FormatCurrency'
 
@@ -7,14 +7,15 @@ export function ShareOnWhatsapp(cartStore: StateProps) {
   const products = cartStore.products
     .map(
       (product) =>
-        `\n|| ${product.quantity}x ${product.item} | ${FormatCurrency(parseFloat(product.price))} | ${FormatCurrency(parseFloat(product.quantity) * parseFloat(product.price))}`,
+        `\n|| ${product.quantity}x ${product.item} | ${FormatCurrency(Number.parseFloat(product.price))} | ${FormatCurrency(Number.parseFloat(product.quantity) * Number.parseFloat(product.price))}`,
     )
     .join('')
 
   const total = FormatCurrency(
     cartStore.products.reduce(
       (total, product) =>
-        total + parseFloat(product.quantity) * parseFloat(product.price),
+        total +
+        Number.parseFloat(product.quantity) * Number.parseFloat(product.price),
       0,
     ),
   )
@@ -22,13 +23,7 @@ export function ShareOnWhatsapp(cartStore: StateProps) {
   const subtitleMessage =
     '## Para adicionar esta lista ao seu app, copie a mensagem sem modificá-la e cole no ícone de compartilhar'
 
-  const message =
-    `${titleMessage}\n` +
-    `${subtitleMessage}\n` +
-    '--\n' +
-    `${products.trim()}\n\n` +
-    '--\n' +
-    `Valor Total: ${total}`
+  const message = `${titleMessage}\n${subtitleMessage}\n--\n${products.trim()}\n\n--\nValor Total: ${total}`
 
   return ConvertMessage(message)
 }

@@ -1,5 +1,6 @@
 import { Feather } from '@expo/vector-icons'
-import { TouchableOpacity, TouchableOpacityProps } from 'react-native'
+import type { TouchableOpacityProps } from 'react-native'
+import { TouchableOpacity } from 'react-native'
 
 export function Trash({ ...rest }: TouchableOpacityProps) {
   return (

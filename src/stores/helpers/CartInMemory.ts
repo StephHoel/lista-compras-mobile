@@ -1,5 +1,5 @@
 import { SortList } from '@/utils/functions/SortList'
-import { ProductProps } from '@/utils/interfaces'
+import type { ProductProps } from '@/utils/interfaces'
 
 export function add(products: ProductProps[], newProduct: ProductProps) {
   const newProducts = [...products, { ...newProduct }]
