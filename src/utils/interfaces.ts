@@ -19,3 +19,10 @@ export interface ButtonProps {
   text: string
   action: () => void
 }
+
+export interface SetProductProps {
+  id: string
+  item: string
+  qtt: string
+  price: string
+}
