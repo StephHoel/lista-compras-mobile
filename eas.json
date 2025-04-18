@@ -1,21 +1,15 @@
 {
   "build": {
-    "preview": {
+    "local-release": {
       "android": {
         "buildType": "apk",
         "image": "latest"
       }
     },
-    "preview2": {
+    "custom-gradle": {
       "android": {
         "gradleCommand": ":app:assembleRelease"
       }
-    },
-    "preview3": {
-      "developmentClient": true
-    },
-    "preview4": {
-      "distribution": "internal"
     },
     "production": {
       "android": {
@@ -23,5 +17,8 @@
         "image": "latest"
       }
     }
+  },
+  "cli": {
+    "appVersionSource": "local"
   }
 }
