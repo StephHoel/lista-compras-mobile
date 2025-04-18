@@ -1,13 +1,16 @@
 {
   "name": "lista-compras-mobile",
   "main": "expo-router/entry",
-  "version": "1.2.6",
+  "version": "1.3.0",
   "scripts": {
-    "start": "expo start",
+    "prebuild": "expo prebuild",
+    "release": "cd android && .\\gradlew assembleRelease && xcopy /Y /Q android\\app\\build\\outputs\\apk\\release\\*.apk _apks\\listadecompras-%npm_package_version%.apk",
+    "debug": "cd android && .\\gradlew assembleDebug && xcopy /Y /Q android\\app\\build\\outputs\\apk\\debug\\*.apk _apks\\listadecompras-debug-%npm_package_version%.apk",
     "android": "expo run:android",
+    "ios": "expo run:ios",
+    "start": "expo start",
     "build:android": "eas build -p android --profile preview",
     "build:local": "eas build --platform android --local",
-    "ios": "expo run:ios",
     "web": "expo start --web"
   },
   "dependencies": {
@@ -33,7 +36,8 @@
     "react-native-screens": "latest",
     "react-native-uuid": "latest",
     "react-native-web": "latest",
-    "zustand": "latest"
+    "zustand": "latest",
+    "expo-dev-client": "latest"
   },
   "devDependencies": {
     "@babel/core": "latest",
@@ -43,7 +47,8 @@
     "jest-expo": "latest",
     "react-test-renderer": "latest",
     "tailwindcss": "latest",
-    "typescript": "latest"
+    "typescript": "latest",
+    "expo-atlas": "latest"
   },
   "private": true
 }
