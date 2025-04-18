@@ -11,6 +11,8 @@ Possível melhoria:
   - Mudar cor do item com preço diferente de 0
   - Deixar salvar com preço zerado
   - Aceitar input de preço com vírgula 
+  - Impedir 2 itens com mesmo nome
+  - Melhorar espaço do input
 -->
 
 ## 📋 Funcionalidades Principais
@@ -35,13 +37,16 @@ Possível melhoria:
 Para compilar o aplicativo em um APK após modificações, siga os passos abaixo em um terminal Linux:
 
 1. **Configure os caminhos necessários:**
+
    ```bash
    export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
    export ANDROID_HOME=$HOME/android
    export ANDROID_SDK_ROOT=${ANDROID_HOME}
    export PATH=${ANDROID_HOME}/cmdline-tools/latest/bin:${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${ANDROID_HOME}/tools/bin:${PATH}
    ```
+
 2. **Execute o comando de build:**
+
    ```bash
    eas build --platform android --local
    ```
