@@ -5,15 +5,6 @@ Este é o repositório oficial do **Lista de Compras**, um aplicativo projetado 
 ![Demonstração do Aplicativo](.github/mobile.gif)
 
 ---
-<!--
-Possível melhoria:
-  - Marcar itens já coletados (ou tachar os itens que tiverem com preço e deixar "normal" os que tiverem sem preço)
-  - Mudar cor do item com preço diferente de 0
-  - Deixar salvar com preço zerado
-  - Aceitar input de preço com vírgula 
-  - Impedir 2 itens com mesmo nome
-  - Melhorar espaço do input
--->
 
 ## 📋 Funcionalidades Principais
 
@@ -21,6 +12,18 @@ Possível melhoria:
 - **Design Intuitivo:** Interface amigável e fácil de usar, proporcionando uma experiência agradável.
 - **Compartilhamento de Listas:** Compartilhe suas listas com familiares e amigos via WhatsApp.
 - **Persistência Local:** Suas listas são salvas localmente no dispositivo, sem necessidade de login.
+- **Cálculo Automático de Totais:** O aplicativo calcula automaticamente o valor total da lista com base nos preços e quantidades dos itens.
+- **Suporte a Preços com Vírgulas:** Insira preços utilizando vírgulas ou pontos como separadores decimais.
+
+---
+
+## 🌟 Funcionalidades Planejadas
+
+- **Marcar Itens Coletados:** Permitir que itens já coletados sejam marcados ou tachados, facilitando o acompanhamento durante as compras.
+- **Destaque de Itens com Preço:** Alterar a cor dos itens com preço diferente de zero para facilitar a identificação.
+- **Salvar Itens com Preço Zerado:** Permitir salvar itens mesmo que o preço esteja zerado.
+- **Prevenção de Duplicidade:** Impedir a adição de itens com o mesmo nome na lista.
+- **Melhoria no Espaço de Input:** Ajustar o layout para melhorar a usabilidade dos campos de entrada.
 
 ---
 
