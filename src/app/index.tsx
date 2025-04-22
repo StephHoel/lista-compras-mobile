@@ -6,6 +6,7 @@ import { FormatTextLine } from "@/utils/functions/StringFunctions";
 import type { ProductProps } from "@/utils/interfaces";
 import { Feather } from "@expo/vector-icons";
 import { Link } from "expo-router";
+import React from "react";
 import { Alert, ScrollView, Text, TouchableOpacity, View } from "react-native";
 
 export default function Home() {
@@ -29,6 +30,11 @@ export default function Home() {
 		]);
 	}
 
+	function toggleCollected(prod: ProductProps): void {
+		prod.collected = !prod.collected;
+		cartStore.edit(prod);
+	}
+
 	return (
 		<ScrollView className="mt-4">
 			<Header
@@ -48,18 +54,30 @@ export default function Home() {
 							<TouchableOpacity onPress={() => handleRemove(prod)}>
 								<Feather name="trash-2" size={24} color="white" />
 							</TouchableOpacity>
+
 							<Link href={`/edit/${prod.id}`} asChild>
 								<TouchableOpacity>
 									<Feather name="edit-2" size={24} color="white" />
 								</TouchableOpacity>
 							</Link>
 
-							<Text
-								className={`text-white pl-2 mr-14 text-xl
-                  ${Number.parseFloat(prod.price) !== 0 ? " line-through " : ""}`}
+							<TouchableOpacity
+								className="flex-row items-center space-x-2"
+								onPress={() => toggleCollected(prod)}
 							>
-								{FormatTextLine(prod)}
-							</Text>
+								<Feather
+									name={prod.collected ? "check-square" : "square"}
+									color={prod.collected ? "#22c55e" : "white"}
+									size={24}
+								/>
+							</TouchableOpacity>
+
+								<Text
+									className={`pl-2 mr-14 text-xl 
+                    ${prod.collected ? " line-through text-gray-600 " : " text-white "}`}
+								>
+									{FormatTextLine(prod)}
+								</Text>
 						</View>
 						{i !== cartStore.products.length - 1 && (
 							<View className="border-b border-gray-500 pt-2" />

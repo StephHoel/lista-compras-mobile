@@ -1,4 +1,3 @@
-import { style } from "@/utils/constants";
 import { TextInput } from "react-native";
 import colors from "tailwindcss/colors";
 
@@ -23,7 +22,7 @@ export function CustomInput({
 }: CustomInputProps) {
 	return (
 		<TextInput
-			className={style.input}
+			className={"border border-gray-400 rounded text-white p-2.5 mb-4 mx-2"}
 			placeholderTextColor={colors.slate[400]}
 			placeholder={placeholder}
 			onChangeText={setItem}

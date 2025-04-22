@@ -48,6 +48,7 @@ function GetQuantityNormalize(qtt: string) {
  * @param {string} params.item - The name or description of the product.
  * @param {number} params.qtt - The quantity of the product.
  * @param {number} params.price - The price of the product.
+ * @param {boolean} [params.collected=false] - Indicates if the product has been collected.
  * @returns {ProductProps} The normalized product object containing the id, item, quantity, and price.
  */
 export function SetProduct({
@@ -55,12 +56,14 @@ export function SetProduct({
   item,
   qtt,
   price,
+  collected = false,
 }: SetProductProps): ProductProps {
   const product: ProductProps = {
     id,
     item: GetItemNomalize(item),
     quantity: GetQuantityNormalize(qtt),
     price: GetPriceNormalize(price),
+    collected,
   }
 
   return product

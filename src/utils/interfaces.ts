@@ -3,6 +3,7 @@ export interface ProductProps {
   quantity: string
   item: string
   price: string
+  collected: boolean // Indica se o item foi coletado
 }
 
 export type StateProps = {
@@ -25,4 +26,5 @@ export interface SetProductProps {
   item: string
   qtt: string
   price: string
+  collected?: boolean
 }

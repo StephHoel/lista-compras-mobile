@@ -16,6 +16,8 @@ O aplicativo oferece uma série de funcionalidades para facilitar sua experiênc
 - **💾 Persistência Local:** Suas listas são salvas localmente no dispositivo, sem necessidade de login.
 - **🧮 Cálculo Automático de Totais:** O aplicativo calcula automaticamente o valor total da lista com base nos preços e quantidades dos itens.
 - **💱 Suporte a Preços com Vírgulas:** Insira preços utilizando vírgulas ou pontos como separadores decimais.
+- **✅ Marcar Itens Coletados:** Permitir que itens já coletados sejam marcados ou tachados, facilitando o acompanhamento durante as compras.
+- **💾 Salvar Itens com Preço Zerado:** Permitir salvar itens mesmo que o preço esteja zerado.
 
 ---
 
@@ -23,11 +25,8 @@ O aplicativo oferece uma série de funcionalidades para facilitar sua experiênc
 
 Estamos constantemente trabalhando para melhorar o aplicativo. Confira as funcionalidades que estão por vir:
 
-- **✅ Marcar Itens Coletados:** Permitir que itens já coletados sejam marcados ou tachados, facilitando o acompanhamento durante as compras.
-- **🎨 Destaque de Itens com Preço:** Alterar a cor dos itens com preço diferente de zero para facilitar a identificação.
-- **💾 Salvar Itens com Preço Zerado:** Permitir salvar itens mesmo que o preço esteja zerado.
-- **🚫 Prevenção de Duplicidade:** Impedir a adição de itens com o mesmo nome na lista.
-- **📐 Melhoria no Espaço de Input:** Ajustar o layout para melhorar a usabilidade dos campos de entrada.
+- **⭐ Prioridade de Itens:** Permitir que o usuário marque itens como prioritários, destacando-os na interface.
+- **🔔 Notificações:** Enviar lembretes para o usuário sobre itens que precisam ser comprados, utilizando a biblioteca `react-native-push-notification`.
 
 ---
 

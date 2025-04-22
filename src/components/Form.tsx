@@ -1,7 +1,7 @@
 import type { PropsWithChildren } from "react";
 import { useEffect, useRef, useState } from "react";
 import type { TextInput } from "react-native";
-import { Alert } from "react-native";
+import { Alert, View } from "react-native";
 import uuid from "react-native-uuid";
 
 import { useCartStore } from "@/stores/CartStore";
@@ -23,6 +23,7 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
 	const [item, setItem] = useState("");
 	const [qtt, setQtt] = useState("");
 	const [price, setPrice] = useState("");
+	const [collected, setCollected] = useState(false);
 
 	const cartStore = useCartStore();
 	const navigate = useNavigation();
@@ -37,7 +38,7 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
 
 			if (data !== null) id = data.id;
 
-			const product = SetProduct({ id, item, qtt, price });
+			const product = SetProduct({ id, item, qtt, price, collected });
 
 			if (data !== null) cartStore.edit(product);
 			else cartStore.add(product);
@@ -53,11 +54,12 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
 			setItem(data.item);
 			setQtt(data.quantity);
 			setPrice(data.price);
+			setCollected(data.collected);
 		}
 	}, [data]);
 
 	return (
-		<>
+		<View className="mt-4">
 			<CustomInput
 				placeholder="Item"
 				selfRef={inputRef1}
@@ -91,6 +93,6 @@ export function Form({ data = null, buttonTitle, children }: FormProps) {
 				<Button.Icon>{children}</Button.Icon>
 				<Button.Text>{buttonTitle}</Button.Text>
 			</Button>
-		</>
+		</View>
 	);
 }
