@@ -3,6 +3,8 @@
   "main": "expo-router/entry",
   "version": "1.3.0",
   "scripts": {
+    "clear": "rm -rf android/ ios/ node_modules/ && npm i",
+    "production": "npx expo prebuild && eas build -p android --profile production",
     "prebuild": "expo prebuild",
     "release": "cd android && .\\gradlew assembleRelease && xcopy /Y /Q android\\app\\build\\outputs\\apk\\release\\*.apk _apks\\",
     "copy-apk": "xcopy /Y /Q android\\app\\build\\outputs\\apk\\release\\*.apk _apks\\",
@@ -15,10 +17,10 @@
     "debug": "cd android && .\\gradlew assembleDebug && xcopy /Y /Q android\\app\\build\\outputs\\apk\\debug\\*.apk _apks\\",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "start": "expo start",
+    "start": "expo start --dev-client",
     "build:android": "eas build -p android --profile preview",
     "build:local": "eas build --platform android --local",
-    "web": "expo start --web",
+    "web": "expo start --web --clear",
     "test": "jest --watchAll"
   },
   "jest": {
@@ -56,6 +58,7 @@
     "@types/react": "~18.3.12",
     "@types/react-native-vector-icons": "^6.4.18",
     "expo-atlas": "^0.4.0",
+    "expo-cli": "^6.3.12",
     "jest": "^29.2.1",
     "jest-expo": "~52.0.6",
     "react-test-renderer": "18.3.1",

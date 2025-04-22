@@ -1,3 +1,5 @@
+import type { ParamListBase, RouteProp } from "@react-navigation/native"
+
 export interface ProductProps {
   id: string
   quantity: string
@@ -28,3 +30,11 @@ export interface SetProductProps {
   price: string
   collected?: boolean
 }
+
+type RootStackParamList = ParamListBase & {
+  Index: undefined;
+  Add: undefined;
+  Edit: { id: string };
+};
+
+export type CurrentRoute = RouteProp<RootStackParamList, keyof RootStackParamList>;
