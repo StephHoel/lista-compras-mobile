@@ -1,27 +1,23 @@
 import { useCartStore } from "@/stores/CartStore";
-import { titleMessage } from "@/utils/constants";
+import { titleMessage, titlePages } from "@/utils/constants";
 import { ConvertToProductsList } from "@/utils/functions/ConvertToProductsList";
 import { ShareOnWhatsapp } from "@/utils/functions/ShareOnWhatsapp";
-import type { ButtonProps } from "@/utils/interfaces";
+import type { ButtonProps, CurrentRoute } from "@/utils/interfaces";
 import { Feather } from "@expo/vector-icons";
+import { useRoute } from "@react-navigation/native";
 import * as Clipboard from "expo-clipboard";
 import { Link } from "expo-router";
 import { useState } from "react";
 import { Linking, Text, TouchableOpacity, View } from "react-native";
 import { CustomAlert } from "./CustomAlert";
 
-interface HeaderProps {
-	text: string;
-	index?: boolean;
-	hasItens?: boolean;
-}
-
-export function Header({ text, index = false, hasItens = false }: HeaderProps) {
+export function Header() {
 	const [alertVisible, setAlertVisible] = useState(false);
 	const [titleAlert, setTitleAlert] = useState("");
 	const [messageAlert, setMessageAlert] = useState("");
 	const [buttonsList, setButtonsList] = useState<ButtonProps[]>([]);
 
+	const route = useRoute<CurrentRoute>();
 	const cartStore = useCartStore();
 
 	function showAlert(
@@ -117,7 +113,9 @@ export function Header({ text, index = false, hasItens = false }: HeaderProps) {
 	return (
 		<>
 			<View className="pt-8 px-3 flex-row justify-between">
-				<Text className="text-white text-2xl font-heading">{text}</Text>
+				<Text className="text-white text-2xl font-heading">
+					{titlePages[route.name as keyof typeof titlePages]}
+				</Text>
 
 				<CustomAlert
 					visible={alertVisible}
@@ -126,9 +124,9 @@ export function Header({ text, index = false, hasItens = false }: HeaderProps) {
 					buttons={buttonsList}
 				/>
 
-				{index ? (
+				{route.name === "index" ? (
 					<>
-						{hasItens && (
+						{cartStore.products.length > 0 && (
 							<TouchableOpacity activeOpacity={0.7} onPress={handleRemoveAll}>
 								<Feather name="trash-2" size={35} color="white" />
 							</TouchableOpacity>

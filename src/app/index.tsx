@@ -36,12 +36,8 @@ export default function Home() {
 	}
 
 	return (
-		<ScrollView className="mt-4">
-			<Header
-				text="Lista de Compras"
-				index
-				hasItens={cartStore.products.length > 0}
-			/>
+		<ScrollView>
+			<Header />
 
 			<Text className="text-white text-center pt-2 pb-4">
 				Total: {FormatCurrency(total)}
@@ -72,12 +68,12 @@ export default function Home() {
 								/>
 							</TouchableOpacity>
 
-								<Text
-									className={`pl-2 mr-14 text-xl 
+							<Text
+								className={`pl-2 mr-14 text-xl 
                     ${prod.collected ? " line-through text-gray-600 " : " text-white "}`}
-								>
-									{FormatTextLine(prod)}
-								</Text>
+							>
+								{FormatTextLine(prod)}
+							</Text>
 						</View>
 						{i !== cartStore.products.length - 1 && (
 							<View className="border-b border-gray-500 pt-2" />
