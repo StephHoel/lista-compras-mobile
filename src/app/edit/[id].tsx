@@ -20,7 +20,7 @@ export default function Edit() {
 
 	return (
 		<ScrollView>
-			<Header text="Editando item" />
+			<Header />
 
 			<Form data={prod} buttonTitle={"Editar Item"}>
 				<Feather name="edit-2" size={20} />

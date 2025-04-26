@@ -7,7 +7,7 @@ import { Header } from "@/components/Header";
 export default function Add() {
 	return (
 		<ScrollView>
-			<Header text="Adicionando item" />
+			<Header />
 
 			<Form buttonTitle={"Adicionar Item"}>
 				<Feather name="plus-circle" size={20} />
