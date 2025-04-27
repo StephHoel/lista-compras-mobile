@@ -16,8 +16,8 @@ O aplicativo oferece uma série de funcionalidades para facilitar sua experiênc
 - **💾 Persistência Local:** Suas listas são salvas localmente no dispositivo, sem necessidade de login.
 - **🧮 Cálculo Automático de Totais:** O aplicativo calcula automaticamente o valor total da lista com base nos preços e quantidades dos itens.
 - **💱 Suporte a Preços com Vírgulas:** Insira preços utilizando vírgulas ou pontos como separadores decimais.
-- **✅ Marcar Itens Coletados:** Permitir que itens já coletados sejam marcados ou tachados, facilitando o acompanhamento durante as compras.
-- **💾 Salvar Itens com Preço Zerado:** Permitir salvar itens mesmo que o preço esteja zerado.
+- **✅ Marcar Itens Coletados:** Marque itens já coletados, facilitando o acompanhamento durante as compras.
+- **💾 Salvar Itens com Preço Zerado:** Permita salvar itens mesmo que o preço esteja zerado.
 
 ---
 
@@ -25,8 +25,11 @@ O aplicativo oferece uma série de funcionalidades para facilitar sua experiênc
 
 Estamos constantemente trabalhando para melhorar o aplicativo. Confira as funcionalidades que estão por vir:
 
-- **⭐ Prioridade de Itens:** Permitir que o usuário marque itens como prioritários, destacando-os na interface.
-- **🔔 Notificações:** Enviar lembretes para o usuário sobre itens que precisam ser comprados, utilizando a biblioteca `react-native-push-notification`.
+- **⭐ Prioridade de Itens:** Marque itens como prioritários, destacando-os na interface.
+- **🔔 Notificações:** Receba lembretes sobre itens que precisam ser comprados, utilizando a biblioteca `react-native-push-notification`.
+- **📂 Múltiplas Listas:** Crie várias listas com títulos personalizados.
+- **🧮 Calculadora de Mercado:** Calcule o preço por unidade (preço total dividido pela unidade, como litro ou kg).
+- **💳 Contas a Pagar:** Gerencie uma lista de contas a pagar para controle financeiro.
 
 ---
 
@@ -34,7 +37,7 @@ Estamos constantemente trabalhando para melhorar o aplicativo. Confira as funcio
 
 Siga os passos abaixo para começar a usar o aplicativo:
 
-1. **Baixe o APK mais recente:** [Clique aqui para baixar](https://github.com/StephHoel/lista-compras-mobile/releases/download/v1.2.7/lista-compras-v1.2.7.apk).
+1. **Baixe o APK mais recente:** [Clique aqui para baixar](https://github.com/StephHoel/lista-compras-mobile/releases/download/v1.3/lista-de-compras-v1.3.0.apk).
 2. **Instale o aplicativo:** Após o download, instale o APK no seu dispositivo Android.
 3. **Comece a usar:** Abra o aplicativo e comece a criar suas listas de compras. Não é necessário login.
 
@@ -61,14 +64,14 @@ Se você deseja compilar o aplicativo após realizar modificações, siga estas 
 
 ---
 
-## 🤝 Contribuição
+## 🤝 Como Contribuir
 
 Contribuições são sempre bem-vindas! Você pode ajudar de várias formas:
 
 - **📂 Abrir Issues:** Relate bugs ou sugira novas funcionalidades.
 - **🔧 Enviar Pull Requests:** Contribua com correções de bugs, novas funcionalidades ou melhorias no código.
 
-### Como Contribuir
+### Passos para Contribuir
 
 1. Faça um fork do repositório.
 2. Crie uma branch para sua funcionalidade ou correção: `git checkout -b minha-feature`.
