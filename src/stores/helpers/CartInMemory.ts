@@ -12,11 +12,7 @@ export function replace(products: ProductProps[]) {
 }
 
 export function remove(products: ProductProps[], productRemovedId: string) {
-  const updatedProducts = products.map((product) =>
-    product.id === productRemovedId ? { ...product, quantity: '0' } : product,
-  )
-
-  return updatedProducts.filter((product) => product.quantity !== '0')
+  return products.filter((product) => product.id !== productRemovedId)
 }
 
 export function edit(products: ProductProps[], editProduct: ProductProps) {

@@ -1,8 +1,11 @@
+import type { ParamListBase, RouteProp } from "@react-navigation/native"
+
 export interface ProductProps {
   id: string
   quantity: string
   item: string
   price: string
+  collected: boolean // Indica se o item foi coletado
 }
 
 export type StateProps = {
@@ -19,3 +22,19 @@ export interface ButtonProps {
   text: string
   action: () => void
 }
+
+export interface SetProductProps {
+  id: string
+  item: string
+  qtt: string
+  price: string
+  collected?: boolean
+}
+
+type RootStackParamList = ParamListBase & {
+  Index: undefined;
+  Add: undefined;
+  Edit: { id: string };
+};
+
+export type CurrentRoute = RouteProp<RootStackParamList, keyof RootStackParamList>;
