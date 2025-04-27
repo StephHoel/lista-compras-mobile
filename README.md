@@ -37,7 +37,7 @@ Estamos constantemente trabalhando para melhorar o aplicativo. Confira as funcio
 
 Siga os passos abaixo para começar a usar o aplicativo:
 
-1. **Baixe o APK mais recente:** [Clique aqui para baixar](https://github.com/StephHoel/lista-compras-mobile/releases/download/v1.3/lista-de-compras-v1.3.0.apk).
+1. **Baixe o APK mais recente:** [Clique aqui para baixar diretamente](https://github.com/StephHoel/lista-compras-mobile/releases/download/v1.3.0/lista-de-compras-v1.3.0.apk).
 2. **Instale o aplicativo:** Após o download, instale o APK no seu dispositivo Android.
 3. **Comece a usar:** Abra o aplicativo e comece a criar suas listas de compras. Não é necessário login.
 
